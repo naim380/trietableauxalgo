@@ -2,11 +2,10 @@ console.log("Donnée à trier")
 // Ecrire un tableau à trier avec les chiffres
 let A = [3, 9, -7, 1, 6, -2, 8, 4, 5]
 let B = [3, 9, -7, 1, 6, -2, 8, 4, 5]
-const C = [3, 9, -7, 1, 6, -2, 8, 4, 5]
 
 console.log(A)
 console.log(B)
-console.log(C)
+
 
 
 console.log("---------------------------------------------------------------\n Solution 1 de tri")
@@ -64,23 +63,46 @@ console.log(tri(B))
 //
 
 console.log("---------------------------------------------------------------\n Solution 3 de tri")
+//
+// let D = [3, 9, -7, 1, 6, -2, 8, 4, 5]
+//
+// let changed = true
+// while (changed) {
+//     changed = false
+//
+//     for (let i = 2; i < D.length; i++) {
+//
+//         if (D[i] > D[i + 1]) {
+//             let tmp1 = table[i]
+//             let tmp2 = table[i+1]
+//             table[[i + 1] = table[i]
+//             D[i] = tmp
+//             changed = true
+//         }
+//     }
+// }
+//
+//
+// console.log(D)
 
-let D = [3, 9, -7, 1, 6, -2, 8, 4, 5]
+const C = [3, 9, -7, 1, 6, -2, 8, 4, 5]
 
-let changed = true
-while (changed) {
-    changed = false
+function sort(table){
+    let changed = true
+    while (changed) {
+        changed = false
 
-    for (let i = 0; i < D.length-1; i++) {
+        for (let i = 0; i < table.length; i++) {
 
-        if (D[i] > D[i + 1]) {
-            let tmp = D[i]
-            D[i + 1] = D[i]
-            D[i] = tmp
-            changed = true
+            if (table[i] > table[i + 1]) {
+                let tmp1 = table[i]
+                let tmp2 = table[i+1]
+                table[i + 1] = tmp1
+                table[i] = tmp2
+                changed = true
+            }
         }
-    }
+    } return table
 }
 
-
-console.log(D)
+console.log(sort(C))
